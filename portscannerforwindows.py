@@ -8,14 +8,14 @@ def get_host_info():
     host = entry_host.get()
     
     try:
-        response = requests.get(f"http://ip-api.com/json/{host}")
+        response = requests.get(f"https://ipinfo.io/{host}/json")
         data = response.json()
 
-        result_text = f"Host: {data['query']}\n"
-        result_text += f"Cidade: {data['city']}\n"
-        result_text += f"Região: {data['regionName']}\n"
-        result_text += f"País: {data['country']}\n"
-        result_text += f"Provedor: {data['isp']}\n"
+        result_text = f"Host: {data['ip']}\n"
+        result_text += f"Cidade: {data.get('city', 'N/A')}\n"
+        result_text += f"Região: {data.get('region', 'N/A')}\n"
+        result_text += f"País: {data.get('country', 'N/A')}\n"
+        result_text += f"Provedor: {data.get('org', 'N/A')}\n"
 
         result.delete('1.0', tk.END)
         result.insert(tk.END, result_text)
