@@ -78,7 +78,7 @@ def load_ip_file():
     result3.insert(tk.END, "\n".join(rules) + "\n" + filter_rule)
 
 window = tk.Tk()
-window.title("Oxossi Software v.3.0 Hacking Alchemy")
+window.title("O caçador v.3.0 Hacking Alchemy")
 window.geometry("900x700")
 window.configure(bg="#111111")
 
